@@ -140,23 +140,8 @@ public class Animal : MonoBehaviour
     }
 
     //Ability to give animals amount of food, water, etc.
-    private void Update()
+    public void Update()
     {
-        //Give Meat
-        if (Input.GetKeyUp(KeyCode.M) || Input.GetKeyUp(KeyCode.N))
-        {
-            Eat(foodType.Meat);
-        }
-        //Give Fish
-        if (Input.GetKeyUp(KeyCode.F))
-        {
-            Eat(foodType.Fish);
-        }
-        //Give Vegetable
-        if (Input.GetKeyUp(KeyCode.V))
-        {
-            Eat(foodType.Vegetable);
-        }
         //Give Water
         if (Input.GetKeyUp(KeyCode.D))
         {
@@ -176,7 +161,7 @@ public class Animal : MonoBehaviour
     }
 
  //Kill innocent animals
-    private void Die()
+    protected virtual void Die()
     {
         Destroy(gameObject);
     }
